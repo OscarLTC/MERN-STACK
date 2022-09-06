@@ -4,6 +4,7 @@ import { Link, useNavigate, useParams } from "react-router-dom";
 import { usePosts } from "../context/postContext";
 import { useEffect, useState } from "react";
 import { AiOutlineLoading3Quarters } from "react-icons/ai";
+import { toast } from "react-hot-toast";
 
 export const PostForm = () => {
     const { createPost, getPost, updatePost } = usePosts();
@@ -48,6 +49,7 @@ export const PostForm = () => {
                             await updatePost(params.id, values);
                         } else {
                             await createPost(values);
+                            toast.success("Post Creado 😁");
                         }
                         actions.setSubmitting(false);
                         navigate("/");

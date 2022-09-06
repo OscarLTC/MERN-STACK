@@ -9,7 +9,9 @@ export const HomePage = () => {
     if (posts.length === 0)
         return (
             <div className="flex flex-col justify-center text-white items-center">
-                <VscEmptyWindow className="w-48 h-48 " />
+                <Link to="/new">
+                    <VscEmptyWindow className="w-48 h-48 " />
+                </Link>
                 <h1>There are no posts</h1>
             </div>
         );
